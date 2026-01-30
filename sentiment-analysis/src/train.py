@@ -10,7 +10,7 @@ from vectorize import build_tfidf_vectorizer
 
 
 DATA_DIR = Path("data/processed")
-MODEL_DIR = Path("../model")
+MODEL_DIR = Path("model")
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 RANDOM_STATE = 42
