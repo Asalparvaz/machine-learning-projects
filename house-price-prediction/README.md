@@ -6,6 +6,8 @@ The goal is to predict house sale prices using structured real-estate data from 
 
 The project focuses on building a **professional end-to-end tabular ML pipeline**, not just training a model in a notebook.
 
+📊 Current Kaggle public leaderboard score: 0.19294
+
 ---
 
 📌 Overview  
@@ -82,14 +84,14 @@ Final model:
 
 ---
 
-🚀 What’s Coming Next  
+🚀 What’s Next
 
-The next step for this project is to complete the full Kaggle competition workflow by:
-
-- Running the trained pipeline on Kaggle’s `test.csv` dataset  
-- Applying the same cleaning, imputation, and preprocessing steps used during training  
-- Generating predictions with the saved XGBoost model  
-- Creating a Kaggle-ready `submission.csv` file
+Planned improvements for the next iteration:
+- Hyperparameter tuning for XGBoost
+- Feature interaction engineering (e.g., total square footage, house age)
+- Trying alternative gradient-boosting models (LightGBM / CatBoost)
+- Error analysis on validation predictions
+Leaderboard climbing is now the main focus 📈
   
 ---
 
@@ -106,7 +108,19 @@ python src/Preprocess.py
 Train the model:
 
 ```bash
-python src/train.py
+python src/Train.py
 ```
 
 The trained model is saved to: `model/xgb_house_price_model.pkl`
+
+Generate Kaggle predictions:
+
+```bash
+python src/Inference.py
+```
+
+This will:
+- Load Kaggle’s `test.csv`
+- Apply the saved preprocessing pipeline
+- Generate predictions using the trained XGBoost model
+- Save `submission/submission.csv` ready for upload
