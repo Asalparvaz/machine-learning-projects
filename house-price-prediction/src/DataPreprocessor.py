@@ -75,7 +75,7 @@ def preprocess_lotfront(df, encoder=None, scaler=None, imputer=None, fit=True):
         XT_imputed = imputer.transform(XT)
 
     XT = pd.DataFrame(XT_imputed, columns=lotfront_features, index=df.index)
-    df[lotfront_features] = XT
+    df["LotFrontage"] = XT["LotFrontage"]
 
     if fit:
         return df, encoder, scaler, imputer
